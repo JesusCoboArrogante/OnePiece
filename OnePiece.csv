@@ -1,0 +1,10 @@
+Nombre,Apodo,UsuarioHaki,UsuarioFruta,Vivo,EnActivo,CreatedAt,UpdatedAt,Recompensa,Tripulacion,Rango
+Monkey D. Luffy,Sombrero de Paja,True,True,True,True,2025-04-03T12:00:00,2025-04-03T12:00:00,3000000000,Sombrero de Paja,
+Roronoa Zoro,Cazador de Piratas,True,False,True,True,2025-04-03T12:00:00,2025-04-03T12:00:00,1111000000,Sombrero de Paja,
+Marshall D. Teach,Barbanegra,True,True,True,True,2025-04-03T12:00:00,2025-04-03T12:00:00,3976000000,Barbanegra,
+Sakazuki,Akainu,True,True,True,True,2025-04-03T12:00:00,2025-04-03T12:00:00,,Marina,Almirante de Flota
+Smoker,Cazador Blanco,True,True,True,True,2025-04-03T12:00:00,2025-04-03T12:00:00,,Marina,Vicealmirante
+Koby,Heroe de la Marina,True,False,True,True,2025-04-03T12:00:00,2025-04-03T12:00:00,,Marina,Capitan
+Dracule Mihawk,Ojos de Halcón,True,False,True,False,2025-04-03T12:00:00,2025-04-03T12:00:00,3590000000,Cross Guild,Shichibukai
+Boa Hancock,Princesa Serpiente,True,True,True,False,2025-04-03T12:00:00,2025-04-03T12:00:00,1659000000,Kuja,Shichibukai
+Crocodile,Mr. 0,True,True,True,False,2025-04-03T12:00:00,2025-04-03T12:00:00,1965000000,Baroque Works,Shichibukai
