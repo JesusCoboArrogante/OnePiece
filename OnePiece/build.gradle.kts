@@ -15,14 +15,15 @@ dependencies {
 
     //JDBI
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jbi:jdbi3:jdbi-core:3.48.0")
-    implementation("org.jdbi:jdbi3:jdbi-sqlobject:3.48.0")
+    implementation("org.jdbi:jdbi3-core:3.48.0")
+    implementation("org.jdbi:jdbi3-sqlobject:3.48.0")
     implementation("org.jdbi:jdbi3-kotlin:3.48.0")
     implementation("org.jdbi:jdbi3-kotlin-sqlobject:3.48.0")
 
     //logger
-    implementation("org.lighthousegames:loggin:1.5.0")
+    implementation("org.lighthousegames:logging:1.5.0")
     implementation("ch.qos.logback:logback-classic:1.5.12")
+
 
     //cache caffeine
     implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")
