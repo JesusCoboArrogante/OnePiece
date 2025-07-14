@@ -1,8 +1,10 @@
 package org.example.models
 
+import java.time.Instant
 import java.time.LocalDateTime
 
 class Pirate(
+    id: Int,
     nombre: String,
     apodo: String,
     haki: Boolean,
@@ -14,6 +16,7 @@ class Pirate(
     createAt: LocalDateTime,
     updateAt: LocalDateTime
 ):Personaje(
+    id,
     nombre,
     apodo,
     haki,
