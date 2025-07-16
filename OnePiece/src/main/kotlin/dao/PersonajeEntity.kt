@@ -11,6 +11,7 @@ data class PersonajeEntity(
     val fruta: Boolean ,
     val vivo: Boolean ,
     val activo: Boolean ,
+    val tipo: String,
     val createAt: LocalDateTime,
     val updateAt: LocalDateTime,
     val recompensa: Int?,

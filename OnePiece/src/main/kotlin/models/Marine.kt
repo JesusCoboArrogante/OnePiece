@@ -20,4 +20,5 @@ class Marine(
     override fun toString(): String {
         return "$nombre, $apodo, $haki, $fruta, $vivo, $activo, $rango, $createAt, $updateAt"
     }
+    val tipo = "Marine"
 }
