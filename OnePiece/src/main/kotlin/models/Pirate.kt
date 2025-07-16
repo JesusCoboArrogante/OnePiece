@@ -12,7 +12,7 @@ class Pirate(
     vivo: Boolean,
     activo: Boolean,
     override val tripulacion: String,
-    override val recompensa: String,
+    override val recompensa: Int,
     createAt: LocalDateTime,
     updateAt: LocalDateTime
 ):Personaje(

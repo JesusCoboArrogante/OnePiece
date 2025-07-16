@@ -24,6 +24,8 @@ dependencies {
     implementation("org.lighthousegames:logging:1.5.0")
     implementation("ch.qos.logback:logback-classic:1.5.12")
 
+   //Result:ROP
+    implementation("com.michael-bull.kotlin-result:kotlin-result:2.0.1")
 
     //cache caffeine
     implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")

@@ -3,18 +3,20 @@ package org.example.models
 import java.time.LocalDateTime
 
 class Shichibukai(
+    id: Int,
     nombre: String,
     apodo: String,
     haki: Boolean,
     fruta: Boolean,
     vivo: Boolean,
     activo: Boolean,
-    override val recompensa: String,
+    override val recompensa: Int,
     override val tripulacion: String,
     override val rango: Rango,
     createAt: LocalDateTime,
     updateAt: LocalDateTime
 ) :Personaje(
+    id,
     nombre,
     apodo,
     haki,
