@@ -3,7 +3,7 @@ package org.example.models
 import java.time.LocalDateTime
 
 abstract class Personaje(
-    val id: Int,
+    var id: Int,
     val nombre:String,
     val apodo:String,
     val haki:Boolean,

@@ -1,10 +1,7 @@
 package org.example.mapper
 
 import org.example.dao.PersonajeEntity
-import org.example.models.Marine
-import org.example.models.Personaje
-import org.example.models.Pirate
-import org.example.models.Shichibukai
+import org.example.models.*
 
 
 fun PersonajeEntity.toModel():Personaje {
@@ -51,6 +48,64 @@ fun PersonajeEntity.toModel():Personaje {
                 rango = this.rango!!
             )
         }
+}
+
+fun Pirate.toEntity(): PersonajeEntity{
+    return PersonajeEntity(
+        id = id,
+        nombre = nombre,
+        apodo = apodo,
+        haki = haki,
+        fruta = fruta,
+        vivo = vivo,
+        activo = activo,
+        tipo = tipo,
+        createAt = createAt ,
+        updateAt = updateAt,
+        recompensa = recompensa,
+        tripulacion = tripulacion,
+        rango = null
+    )
+
+    fun Marine.toEntity(): PersonajeEntity{
+        return PersonajeEntity(
+            id = id,
+            nombre = nombre,
+            apodo = apodo,
+            haki = haki,
+            fruta = fruta,
+            vivo = vivo,
+            activo = activo,
+            tipo = tipo,
+            createAt = createAt,
+            updateAt = updateAt,
+            recompensa = null,
+            tripulacion = null,
+            rango = rango
+        )
+    }
+
+    fun Shichibukai.toEntity(): PersonajeEntity{
+        return PersonajeEntity(
+            id = id,
+            nombre = nombre,
+            apodo = apodo,
+            haki = haki,
+            fruta = fruta,
+            vivo = vivo,
+            activo = activo,
+            tipo = tipo,
+            createAt = createAt,
+            updateAt = updateAt,
+            recompensa = recompensa,
+            tripulacion = tripulacion,
+            rango = rango
+        )
+    }
+
+
+
+
 }
 
 

@@ -30,6 +30,9 @@ dependencies {
     //cache caffeine
     implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")
 
+    //Serializacion Json
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+
     //test
     testImplementation("io.mockk:mockk:1.13.16")
     testImplementation(kotlin("test"))
