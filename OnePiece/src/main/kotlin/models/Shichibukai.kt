@@ -3,7 +3,7 @@ package org.example.models
 import java.time.LocalDateTime
 
 class Shichibukai(
-    id: Int,
+    id: Long,
     nombre: String,
     apodo: String,
     haki: Boolean,

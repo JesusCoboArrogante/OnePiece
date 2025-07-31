@@ -3,7 +3,7 @@ package org.example.models
 import java.time.LocalDateTime
 
 class Marine(
-    id: Int,
+    id: Long,
     nombre: String,
     apodo: String,
     haki: Boolean,

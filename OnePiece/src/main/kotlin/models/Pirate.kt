@@ -4,7 +4,7 @@ import java.time.Instant
 import java.time.LocalDateTime
 
 class Pirate(
-    id: Int,
+    id: Long,
     nombre: String,
     apodo: String,
     haki: Boolean,

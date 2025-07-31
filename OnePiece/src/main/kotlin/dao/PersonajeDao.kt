@@ -1,7 +1,6 @@
 package main.kotlin.dao
 import org.jdbi.v3.sqlobject.kotlin.RegisterKotlinMapper
 import org.example.dao.PersonajeEntity
-import org.example.models.Personaje
 import org.example.models.Rango
 import org.jdbi.v3.sqlobject.customizer.Bind
 import org.jdbi.v3.sqlobject.customizer.BindBean
@@ -18,7 +17,7 @@ interface PersonajeDao {
 
     //buscar por id puede haber id nulos
     @SqlQuery("SELECT * FROM personajesOnePiece WHERE id = :id")
-    fun findById(@Bind("id") id: Int):PersonajeEntity?
+    fun findById(@Bind("id") id: Long):PersonajeEntity?
 
     //añadir personaje
     @SqlUpdate ("insert into personajesOnePiece (nombre, apado, haki, fruta, vivo, activo, createAt, updateAt, recompesa, tripulacion, rango) VALUES (:nombre, :apado, :haki, :fruta, :vivo, :activo, :createAt, :updateAt, :recompesa, :tripulacion, :rango)")
@@ -42,10 +41,10 @@ interface PersonajeDao {
     ):Int
 
     @SqlUpdate ("UPDATE personajesOnePiece SET nombre =:nombre, apodo =:apado, haki =:haki, fruta=:fruta, vivo=:vivo, activo=:activo, createAT=:createAt, updateAt=:updateAt, recompensa=:recompesa, tripulacion=:tripulacion, rango=:rango WHERE id = :id")
-    fun update (@BindBean personaje: PersonajeEntity):Int
+    fun update (@BindBean personaje: PersonajeEntity?):Int
 
     @SqlUpdate ("DELETER FROM personajesOnePiece WHERE id =:id")
-    fun deleter (@Bind("id") id: Int): Int
+    fun deleter (@Bind("id") id: Long): Long
 
     //consultas secundarias
     @SqlQuery ("SELECT * FROM personajesOnePiece LIMIT  :LIMIT OFFSET :offset")
