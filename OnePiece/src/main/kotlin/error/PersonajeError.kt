@@ -1,7 +1,8 @@
 package org.example.error
 
-sealed class PersonajeError (val mensaje:String) {
-    class NotFoundError(id:Int) : PersonajeError ("Personaje no encontrado su id: $id")
-    class ValidationError (mensaje: String) : PersonajeError ("Personaje no valido: $mensaje")
+sealed class PersonajeError (val messaje:String) {
+    class NotFoundError(messaje: String): PersonajeError ("Personaje no encontrado su id: $messaje")
+    class ValidationError (messaje: String): PersonajeError ("Personaje no valido: $messaje")
+    class StorageError (messaje: String): PersonajeError ("Error en el Storaje: $messaje")
 
 }

@@ -11,7 +11,7 @@ import org.example.models.Pirate
 import org.example.models.Shichibukai
 import java.time.LocalDateTime
 
-class PersonajeRepositoryImplement (
+class PersonajeRepositoryImpl (
     private  val dao: PersonajeDao
 ): PersonajeRepository<Long,Personaje> {
     override fun save(entity: Personaje): Personaje {
@@ -37,7 +37,7 @@ class PersonajeRepositoryImplement (
         return eliminarPersonaje
     }
 
-    override fun update(id: Long): Personaje? {
+    fun update(id: Long, personaje: Personaje): Personaje? {
         val actualizarPersonaje:PersonajeEntity? = dao.findById(id)
         if (actualizarPersonaje == null){
             return null
