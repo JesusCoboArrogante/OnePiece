@@ -11,14 +11,15 @@ class Marine(
     vivo: Boolean,
     activo: Boolean,
     override val rango: Rango,
+    tipo:String,
     createAt: LocalDateTime,
     updateAt: LocalDateTime
 ): Personaje(id, nombre, apodo, haki, fruta,
     vivo,
-    activo, createAt, updateAt
+    activo,tipo, createAt, updateAt
 ),Marina {
     override fun toString(): String {
         return "$nombre, $apodo, $haki, $fruta, $vivo, $activo, $rango, $createAt, $updateAt"
     }
-    val tipo = "Marine"
+
 }

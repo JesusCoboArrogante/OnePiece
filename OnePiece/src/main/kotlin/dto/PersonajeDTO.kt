@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 data class PersonajeDTO(
 
     @SerialName("id")
-    val id: Int,
+    val id: Long,
 
     @SerialName("nombre")
     val nombre: String,
@@ -35,10 +35,10 @@ data class PersonajeDTO(
     val tipo: String,
 
     @SerialName("createAt")
-    val createAt: LocalDateTime,
+    val createAt: String,
 
     @SerialName("updateAt")
-    val updateAt: LocalDateTime,
+    val updateAt: String,
 
     @SerialName("recompensas")
     val recompensa: Int?,
@@ -47,5 +47,5 @@ data class PersonajeDTO(
     val tripulacion: String?,
 
     @SerialName("rango")
-    val rango: Rango?
+    val rango: String?
 )

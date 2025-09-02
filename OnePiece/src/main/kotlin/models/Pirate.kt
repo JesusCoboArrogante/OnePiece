@@ -13,6 +13,7 @@ class Pirate(
     activo: Boolean,
     override val tripulacion: String,
     override val recompensa: Int,
+    tipo: String,
     createAt: LocalDateTime,
     updateAt: LocalDateTime
 ):Personaje(
@@ -23,11 +24,12 @@ class Pirate(
     fruta,
     vivo,
     activo,
+    tipo,
     createAt,
     updateAt
 ),Pirata {
     override fun toString(): String {
         return "$nombre, $apodo, $haki, $fruta, $vivo, $activo, $recompensa, $tripulacion $createAt, $updateAt"
     }
-    val tipo = "Pirate"
+
 }
