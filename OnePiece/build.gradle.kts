@@ -33,10 +33,15 @@ dependencies {
     //Serializacion Json
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
 
+    //Serializacion Xml
+    implementation("io.github.pdvrieze.xmlutil:serialization-jvm:0.90.3")
+
     //test
     testImplementation("io.mockk:mockk:1.13.16")
     testImplementation(kotlin("test"))
     testImplementation("org.jdbi:jdbi3-testing:3.48.0")
+
+    //
 
 }
 

@@ -1,6 +1,5 @@
 package org.example.models
 
-import java.time.Instant
 import java.time.LocalDateTime
 
 class Pirate(

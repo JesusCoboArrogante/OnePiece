@@ -2,23 +2,27 @@ package org.example.mapper
 
 import org.example.dao.PersonajeEntity
 import org.example.dto.PersonajeDTO
+import org.example.dto.PersonajeXmlDto
 import org.example.models.*
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 
 fun PersonajeEntity.toModel():Personaje {
         return if (this.tipo == "Pirate"){
             Pirate(
-                id = this.id,
-                nombre = this.nombre,
-                apodo = this.apodo,
-                haki = this.haki,
-                fruta = this.fruta,
-                vivo = this.vivo,
-                activo = this.activo,
-                createAt = this.createAt,
-                updateAt = this.updateAt,
-                recompensa = this.recompensa!!,
-                tripulacion = this.tripulacion!!
+                id = id,
+                nombre = nombre,
+                apodo = apodo,
+                haki = haki,
+                fruta = fruta,
+                vivo = vivo,
+                activo = activo,
+                tipo = tipo,
+                createAt = createAt,
+                updateAt = updateAt,
+                recompensa = recompensa!!,
+                tripulacion = tripulacion!!
             )
         } else if (this.tipo == "Shichibukai"){
             Shichibukai(
@@ -29,11 +33,12 @@ fun PersonajeEntity.toModel():Personaje {
                 fruta = this.fruta,
                 vivo = this.vivo,
                 activo = this.activo,
+                tipo = this.tipo,
                 createAt = this.createAt,
                 updateAt = this.updateAt,
                 recompensa = this.recompensa!!,
                 tripulacion = this.tripulacion!!,
-                rango = this.rango!!
+                rango = Rango.valueOf(rango!!)
             )
         }else{
             Marine(
@@ -44,9 +49,10 @@ fun PersonajeEntity.toModel():Personaje {
                 fruta = this.fruta,
                 vivo = this.vivo,
                 activo = this.activo,
+                tipo = this.tipo,
                 createAt = this.createAt,
                 updateAt = this.updateAt,
-                rango = this.rango!!
+                rango = Rango.valueOf(rango!!)
             )
         }
 }
@@ -65,7 +71,7 @@ fun Pirate.toEntity(): PersonajeEntity {
         updateAt = updateAt,
         recompensa = recompensa,
         tripulacion = tripulacion,
-        rango = null
+        rango = null.toString()
     )
 }
 
@@ -83,7 +89,7 @@ fun Pirate.toEntity(): PersonajeEntity {
             updateAt = updateAt,
             recompensa = null,
             tripulacion = null,
-            rango = rango
+            rango = rango.toString()
         )
     }
 
@@ -101,7 +107,7 @@ fun Pirate.toEntity(): PersonajeEntity {
             updateAt = updateAt,
             recompensa = recompensa,
             tripulacion = tripulacion,
-            rango = rango
+            rango = rango.toString()
         )
     }
 
@@ -115,38 +121,44 @@ fun Pirate.toEntity(): PersonajeEntity {
                 fruta = fruta,
                 vivo = vivo,
                 activo = activo,
-                createAt = createAt,
-                updateAt = updateAt,
+                tipo = tipo,
+                createAt = LocalDateTime.parse(createAt),
+                updateAt = LocalDateTime.parse(createAt),
                 recompensa = recompensa!!,
                 tripulacion = tripulacion!!
             )
         }else if (this.tipo == "Marine"){
-            return Marine(id = id,
+            return Marine(
+                id = id,
                 nombre = nombre,
                 apodo = apodo,
                 haki = haki,
                 fruta = fruta,
                 vivo = vivo,
                 activo = activo,
-                createAt = createAt,
-                updateAt = updateAt,
-                rango = rango!!
+                tipo = tipo,
+                createAt = LocalDateTime.parse(createAt),
+                updateAt = LocalDateTime.parse(createAt),
+                rango = Rango.valueOf(rango!!)
             )
 
         } else{
-           return Shichibukai(id = id,
-                nombre = nombre,
-                apodo = apodo,
-                haki = haki,
-                fruta = fruta,
-                vivo = vivo,
-                activo = activo,
-                createAt = createAt,
-                updateAt = updateAt,
-                recompensa = recompensa!!,
-                tripulacion = tripulacion!!,
-                rango = rango!!
-            )
+           return Shichibukai(
+               id = id,
+               nombre = nombre,
+               apodo = apodo,
+               haki = haki,
+               fruta = fruta,
+               vivo = vivo,
+               activo = activo,
+               tipo = tipo,
+               createAt = LocalDateTime.parse(createAt),
+               updateAt = LocalDateTime.parse(createAt),
+               recompensa = recompensa!!,
+               tripulacion = tripulacion!!,
+               rango = Rango.valueOf(rango!!)
+
+           )
 
         }
     }
@@ -161,8 +173,8 @@ fun Pirate.toDto(): PersonajeDTO{
         vivo = vivo,
         activo = activo,
         tipo = tipo,
-        createAt = createAt,
-        updateAt = updateAt,
+        createAt = createAt.toString(),
+        updateAt = updateAt.toString(),
         recompensa = recompensa,
         tripulacion = tripulacion,
         rango = null
@@ -179,11 +191,11 @@ fun Marine.toDto():PersonajeDTO{
         vivo = vivo,
         activo = activo,
         tipo = tipo,
-        createAt = createAt,
-        updateAt = updateAt,
+        createAt = createAt.toString(),
+        updateAt = updateAt.toString(),
         recompensa = null,
         tripulacion = null,
-        rango = rango
+        rango = rango.toString()
     )
 }
 
@@ -197,13 +209,122 @@ fun Shichibukai.toDto():PersonajeDTO{
         vivo = vivo,
         activo = activo,
         tipo = tipo,
-        createAt = createAt,
-        updateAt = updateAt,
+        createAt = createAt.toString(),
+        updateAt = updateAt.toString(),
         recompensa = recompensa,
         tripulacion = tripulacion,
-        rango = rango
+        rango = rango.toString()
+    )
+
+}
+
+fun PersonajeXmlDto.toModel():Personaje{
+    return if (this.tipo == "Pirate"){
+        Pirate(
+            id = id,
+            nombre = nombre,
+            apodo = apodo,
+            haki = haki,
+            fruta = fruta,
+            vivo = vivo,
+            activo = activo,
+            tipo = tipo,
+            createAt = LocalDateTime.parse(createAt),
+            updateAt = LocalDateTime.parse(createAt),
+            recompensa = recompensa!!,
+            tripulacion = tripulacion!!
+        )
+    }else if (this.tipo == "Marine"){
+        return Marine(
+            id = id,
+            nombre = nombre,
+            apodo = apodo,
+            haki = haki,
+            fruta = fruta,
+            vivo = vivo,
+            activo = activo,
+            tipo = tipo,
+            createAt = LocalDateTime.parse(createAt),
+            updateAt = LocalDateTime.parse(createAt),
+            rango = Rango.valueOf(rango!!)
+        )
+
+    } else{
+        return Shichibukai(
+            id = id,
+            nombre = nombre,
+            apodo = apodo,
+            haki = haki,
+            fruta = fruta,
+            vivo = vivo,
+            activo = activo,
+            tipo = tipo,
+            createAt = LocalDateTime.parse(createAt),
+            updateAt = LocalDateTime.parse(createAt),
+            recompensa = recompensa!!,
+            tripulacion = tripulacion!!,
+            rango = Rango.valueOf(rango!!)
+
+        )
+
+    }
+
+
+}
+
+fun Pirate.toXmlDto(): PersonajeXmlDto{
+    return PersonajeXmlDto(
+        id = id,
+        nombre = nombre,
+        apodo = apodo,
+        haki = haki,
+        fruta = fruta,
+        vivo = vivo,
+        activo = activo,
+        tipo = tipo,
+        createAt = createAt.toString(),
+        updateAt = updateAt.toString(),
+        tripulacion = tripulacion,
+        recompensa = recompensa,
+        rango = ""
     )
 }
+
+fun Marine.toXmlDto(): PersonajeXmlDto{
+    return PersonajeXmlDto(
+        id = id,
+        nombre = nombre,
+        apodo = apodo,
+        haki = haki,
+        fruta = fruta,
+        vivo = vivo,
+        activo = activo,
+        tipo = tipo,
+        createAt = createAt.toString(),
+        updateAt = updateAt.toString(),
+        tripulacion = null,
+        recompensa = null,
+        rango = rango.toString()
+    )
+}
+fun Shichibukai.toXmlDto(): PersonajeXmlDto{
+    return PersonajeXmlDto(
+        id = id,
+        nombre = nombre,
+        apodo = apodo,
+        haki = haki,
+        fruta = fruta,
+        vivo = vivo,
+        activo = activo,
+        tipo = tipo,
+        createAt = createAt.toString(),
+        updateAt = updateAt.toString(),
+        tripulacion = tripulacion,
+        recompensa = recompensa,
+        rango = rango.toString()
+    )
+}
+
 
 
 
