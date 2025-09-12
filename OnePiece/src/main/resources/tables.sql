@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS personajesOnePiece(
+    id IDENTITY NOT NULL PRIMARY KEY,
+    nombre VARCHAR NOT NULL,
+    apodo VARCHAR,
+    haki BOOLEAN NOT NULL ,
+    fruta BOOLEAN NOT NULL,
+    vivo BOOLEAN NOT NULL,
+    activo BOOLEAN NOT NULL,
+    createAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    LocalDateTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    recompensa INTEGER,
+    tripulacion VARCHAR,
+    rango VARCHAR
+);
+
